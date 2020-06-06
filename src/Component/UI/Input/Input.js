@@ -6,15 +6,21 @@ const  input = (props) => {
 
     let  inputElement = null;
 
-    switch (props.inputtype) {
+    switch (props.elementType) {
         case ('input'):
-            inputElement = <input className="InputElement" {...props} />;
+            inputElement = <input className="InputElement"
+                                  {...props.elementConfig}
+                                  value={props.value} />;
             break;
         case ('textarea'):
-            inputElement = <textarea className="InputElement" {...props} />;
+            inputElement = <textarea className="InputElement"
+                                     {...props.elementConfig}
+                                     value={props.value} />;
             break;
         default:
-                inputElement = <input className="InputElement" {...props} />;
+                inputElement = <input className="InputElement"
+                                      {...props.elementConfig}
+                                      value={props.value} />;
 
     }
     return (
