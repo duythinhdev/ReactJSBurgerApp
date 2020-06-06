@@ -6,7 +6,7 @@ import ContactData from "../CheckOut/ContactData/ContactData";
 
 class Checkout extends Component {
     state = {
-        ingredients: 0,
+        ingredients: null,
         price:0
     }
 
@@ -22,7 +22,7 @@ class Checkout extends Component {
                 ingredients[param[0]] = +param[1];
             }
         }
-        this.setState({ingredients: ingredients})
+        this.setState({ingredients: ingredients, totalPrice: price})
     }
 
     checkoutCancelledHandler = () => {
