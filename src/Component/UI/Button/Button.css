@@ -20,6 +20,10 @@
     margint-top:-500px
 }
 
+.Button:disabled{
+    color: #ccc;
+    cursor: not-allowed;
+}
 .Danger {
     color: #944317;
     margint-top:-500px
