@@ -61,6 +61,8 @@ class Auth extends  Component {
                 touched: true
             } )
         } );
+        console.log(event.target.value)
+        console.log(updatedControls)
         this.setState( { controls: updatedControls } );
     }
     submitHandler = (event) => {
