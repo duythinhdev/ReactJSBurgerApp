@@ -22,8 +22,26 @@
 
 .Success {
     color: #5C9210;
+    background-color: transparent;
+    border: none;
+    /*color: white;*/
+    outline: none;
+    cursor: pointer;
+    font: inherit;
+    padding: 10px;
+    margin: 10px;
+    font-weight: bold;
 }
 
 .Danger {
     color: #944317;
+    background-color: transparent;
+    border: none;
+    /*color: white;*/
+    outline: none;
+    cursor: pointer;
+    font: inherit;
+    padding: 10px;
+    margin: 10px;
+    font-weight: bold;
 }
