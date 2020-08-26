@@ -2,6 +2,7 @@
     text-align: center;
     width: 80%;
     margin: auto;
+    /*margin-top: 25px;*/
 }
 
 /*@media (min-width: 600px) {*/
@@ -9,3 +10,9 @@
 /*        width: 500px;*/
 /*    }*/
 /*}*/
+.buttonCANCEL{
+    margin-top: 15px;
+}
+.buttonCONTINUE{
+    margin-top: 15px;
+}

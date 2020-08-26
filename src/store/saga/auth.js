@@ -37,7 +37,8 @@ export function* authUserSaga(action) {
         yield put(actions.authSuccess(response.data.idToken,response.data.localId));
         yield put(actions.checkAuthTimeOut(response.data.expiresIn))
     } catch (error) {
-        yield put(actions.authFail(error.response.data.error));
+        yield put(actions.authFail(error.response.data.error,alert("Đăng Nhập Không Thành Công")));
+        // yield put(actions.authFail(alert("Đăng Nhập Không Thành Công")));
     }
 }
 
