@@ -54,7 +54,7 @@ class App extends Component{
     return (
           <div>
             <Layout>
-                {routes}
+                {routes} 
             </Layout>
           </div>
     );

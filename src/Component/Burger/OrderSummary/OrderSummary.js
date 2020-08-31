@@ -15,7 +15,7 @@ class  orderSummary extends Component{
                 </li>
             );
         });
-
+        // console.log("456789",ingredientSummary);
         return (
             <Aux>
                 <h3>Your order</h3>

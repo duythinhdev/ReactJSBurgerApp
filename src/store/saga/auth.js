@@ -24,11 +24,13 @@ export function* authUserSaga(action) {
         returnSecureToken: true
     }
     let url = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCOTPgCDUNdZkVEdg_9gjFlzR-yRIqykbI';
-    if(!action.actionisSignup){
-        url ='https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCOTPgCDUNdZkVEdg_9gjFlzR-yRIqykbI'
+    console.log(url)
+    if(!action.isSignup){
+        url ='https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCOTPgCDUNdZkVEdg_9gjFlzR-yRIqykbI';
     }
     try {
         const response = yield axios.post(url,authData)
+        console.log(url)
         console.log(response);
         const expirationDate = yield new Date(new Date().getTime() + response.data.expiresIn * 1000);
         yield localStorage.setItem('tonken',response.data.idToken);
@@ -37,8 +39,7 @@ export function* authUserSaga(action) {
         yield put(actions.authSuccess(response.data.idToken,response.data.localId));
         yield put(actions.checkAuthTimeOut(response.data.expiresIn))
     } catch (error) {
-        yield put(actions.authFail(error.response.data.error,alert("Đăng Nhập Không Thành Công")));
-        // yield put(actions.authFail(alert("Đăng Nhập Không Thành Công")));
+        yield put(actions.authFail(error.response.data.error,alert("Đăng Nhập không thành công")));
     }
 }
 
@@ -48,7 +49,7 @@ export function* authcheckStateSaga(action) {
         {
             yield put(actions.logout());
         }
-        else  {
+        else {
             const expirationDate = yield new Date(localStorage.getItem('expirationDate'));
             if(expirationDate <=  new Date())
             {
@@ -60,5 +61,4 @@ export function* authcheckStateSaga(action) {
                 yield put(actions.checkAuthTimeOut(expirationDate.getSeconds() -  new  Date().getSeconds() / 1000 ));
             }
         }
-
 }

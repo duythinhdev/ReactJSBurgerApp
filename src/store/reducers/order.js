@@ -12,10 +12,10 @@ const purchaseInit = (state,action) => {
 }
 
 const purchaseBurgerStart = ( state, action ) => {
-    return updateObject( state, { loading: false    } );
+    return updateObject( state, { loading: false} );
 };
 const purchaseBurgerSuccess = (state,action) => {
-    const newOrder = updateObject(action.orderData,{    id: action.orderId})
+    const newOrder = updateObject(action.orderData,{id: action.orderId})
     return updateObject(state,{
         loading:false,
         purchased: true,
