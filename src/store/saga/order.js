@@ -26,6 +26,8 @@ export  function* fetchOrdersSaga(action)
                 id: key
             } );
         }
+        console.log("123456789",repsonse.data)
+        console.log("12345678910",actions.fetchOrdersSuccess(fetchedOrders))
         yield put(actions.fetchOrdersSuccess(fetchedOrders))
     }
     catch (error) {

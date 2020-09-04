@@ -29,6 +29,7 @@ const fetchOrdersStart = (state,action) => {
     return  updateObject(state, {loading:true})
 }
 const fetchOrdersSuccess = ( state, action ) => {
+    console.log("1234567",action.orders)
     return updateObject( state, {
         orders: action.orders,
         loading: false

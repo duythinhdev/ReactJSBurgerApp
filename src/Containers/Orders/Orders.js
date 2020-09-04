@@ -35,6 +35,7 @@ class Orders extends Component
 } 
 
 const mapStateToProps = state => {
+    console.log("stateorder",state.order.orders)
     return {
         orders: state.order.orders,
         loading: state.order.loading,
@@ -44,6 +45,7 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => {
+    console.log("1111222233334444",actions.fetchOrders())
     return {
         onFetchOrders: (token,userId) => dispatch(actions.fetchOrders(token, userId))
 
