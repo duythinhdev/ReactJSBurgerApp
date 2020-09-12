@@ -8,9 +8,11 @@ import SideDrawer from '../../Component/Navigation/SideDrawer/SideDrawer';
 
 
 class Layout extends Component {
-
-    state = {
-        showSideDrawer: true
+    constructor(props) {
+        super(props);
+        this.state = {
+            showSideDrawer: true
+        }
     }
 
     sideDrawerClosedHander = () =>{
@@ -33,7 +35,7 @@ class Layout extends Component {
                     isAuth = {this.props.isAuthenticated}
                     open={this.state.showSideDrawer}
                     closed={this.sideDrawerClosedHander} />
-                <main className="Content">
+                <main className={classes.Content}>
                     {this.props.children}
                 </main>
             </Aux>
