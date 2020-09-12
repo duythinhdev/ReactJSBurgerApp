@@ -6,7 +6,7 @@ import { object } from "prop-types";
 
 const burger = (props) =>{
     // console.log(props )
-    let  tranfromedIngredients = Object.keys( props.ingredients )
+    let  tranfromedIngredients = Object.keys(props.ingredients)
         .map(igkey => {
         return [...Array( props.ingredients[igkey] )].map(( _, i)=> {
             return <BurgerIngredient key={igkey + i } type={igkey} />;

@@ -82,6 +82,9 @@ module.exports = function(webpackEnv) {
       {
         loader: require.resolve('css-loader'),
         options: cssOptions,
+          importLoaders: 1,
+          modules: true,
+          localIdentName: '[name]__[local]__[hash:base64:5]'
       },
       {
         // Options for PostCSS as we reference these options twice
@@ -89,13 +92,19 @@ module.exports = function(webpackEnv) {
         // package.json
         loader: require.resolve('postcss-loader'),
         options: {
-          // Necessary for external CSS imports to work
+          // Necessary for external CSS impor ts to work
           // https://github.com/facebook/create-react-app/issues/2677
           ident: 'postcss',
           plugins: () => [
             require('postcss-flexbugs-fixes'),
             require('postcss-preset-env')({
               autoprefixer: {
+                browsers: [
+                  '>1%',
+                  'last 4 versions',
+                  'Firefox ESR',
+                  'not ie < 9', // React doesn't support IE8 anyway
+                ],
                 flexbox: 'no-2009',
               },
               stage: 3,

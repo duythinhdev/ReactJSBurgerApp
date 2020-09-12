@@ -5,14 +5,14 @@
     /*margin-top: 25px;*/
 }
 
-/*@media (min-width: 600px) {*/
-/*    .CheckoutSummary{*/
-/*        width: 500px;*/
-/*    }*/
-/*}*/
+@media (min-width: 600px) {
+    .CheckoutSummary{
+        width: 500px;
+    }
+}
 .buttonCANCEL{
-    margin-top: 10px;
+    margin-top: 3px;
 }
 .buttonCONTINUE{
-    margin-top: 10px;
+    margin-top: 3px;
 }
