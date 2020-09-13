@@ -6,7 +6,7 @@
     left: 0;
     top: 0;
     z-index: 200;
-    background-color: white;
+    background-color:#703B09 ;
     padding: 32px 16px;
     box-sizing: border-box;
     transition: transform 0.3s ease-out;
@@ -19,7 +19,7 @@
 }
 
 .Open {
-    transform: translateX(0);
+    transform: translateX(10);
 }
 
 .Close {
@@ -27,6 +27,7 @@
 }
 
 .Logo_SideDrawer{
+    /*width: 44%;*/
     height: 11%;
-    margin-bottom: 1px;
+    margin-bottom: 32px;
 }
